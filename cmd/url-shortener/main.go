@@ -46,24 +46,25 @@ func main() {
 		os.Exit(1)
 	}
 
-	// err = storage.SaveURL("https://google.com", "google")
-	// if err != nil {
-	// 	log.Error("failed to find", sl.Err(err))
-	// }
-	// err = storage.SaveURL("https://smgoogle.com", "smgoogle")
-	// if err != nil {
-	// 	log.Error("failed to find", sl.Err(err))
-	// }
+	err = storage.SaveURL("https://google.com", "google")
+	if err != nil {
+		log.Error("failed to find", sl.Err(err))
+	}
+	err = storage.SaveURL("https://smgoogle.com", "smgoogle")
+	if err != nil {
+		log.Error("failed to find", sl.Err(err))
+	}
 
-	// str, err := storage.GetURL("google")
-	// if err != nil {
-	// 	log.Error("failed to find", sl.Err(err))
-	// }
-	// fmt.Printf("\n%#v\n", str)
-	// err = storage.DeleteURL("google")
-	// if err != nil {
-	// 	log.Error("failed to find", sl.Err(err))
-	// }
+	str, err := storage.GetURL("google")
+	if err != nil {
+		log.Error("failed to find", sl.Err(err))
+	}
+	fmt.Printf("\n%#v\n", str)
+	err = storage.DeleteURL("google")
+	if err != nil {
+		log.Error("failed to find", sl.Err(err))
+	}
+
 	//TO DO: init router: chi, "chi render"
 
 	router := chi.NewRouter()

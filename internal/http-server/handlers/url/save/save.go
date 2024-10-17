@@ -18,6 +18,8 @@ import (
 // TODO: move to config
 const aliasLength = 6
 
+//go:generate go run github.com/vektra/mockery/v2@v2.28.2 --name=URLSaver
+
 type Request struct {
 	URL   string `json:"url", validate:"required.url"`
 	Alias string `json:"alias,omitempty"`
